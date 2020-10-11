@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Survey form</title>
+    <style>
+      * {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  background-color:  #e6fff7;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #d3f7eb;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  border-bottom: 1px solid  #006652;
+}
+
+#title {
+  color:  #006652;
+  text-transform: uppercase;
+  padding: 25px;
+}
+
+#description{
+  padding-bottom: 25px;
+  font-size: 18px;
+  font-style: italic;
+  color:  #003323;
+}
+
+.content-wrapper-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 25px;
+}
+
+#survey-form {
+  background-color: #00cca3;
+  padding: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+label, input {
+  margin-bottom: 11px;
+  font-style: oblique;
+}
+
+.input-radio, .input-checkbox {
+  margin-right: 10px;
+}
+
+
+label {
+  font-weight: bold;
+  color: #004d34;
+  font-size: 16px;
+}
+
+.fields, .comments-field {
+  height: 34px;
+  width: 350px;
+  background-color: #b3ffe7;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 2px solid  #008055;
+  margin-bottom: 25px;
+}
+
+.comments-field {
+  height: 100px;
+  width: 450px;
+  font-style: oblique;
+  color: #006652;
+}
+
+.field-description {
+  font-style: oblique;
+  font-weight: bold;
+  color: #004d34;
+  margin-bottom: 25px;
+}
+
+#dropdown {
+  height: 45px;
+}
+
+option {
+  font-weight: normal;
+  font-style: oblique;
+  min-height: 1.2em;
+  color: grey;
+}
+
+.submit-btn {
+  background-color:  #006652;
+  color: #e6fffa;
+  font-weight: bold;
+  font-style: oblique;
+  height: 35px;
+  width: 100px;
+  border-radius: 5px;
+}
+
+.submit-btn:hover {
+  background-color:  #003329;
+  color:  #99ffeb;
+}
+      </style>
+  </head>
+  <body>
+
+   <header>
+    <h1 id="title">Your fitness level</h1>
+    <p id="description">This survey will help us to find out more about your body and habbits.</p>
+  </header>
+
+  <main>
+    <div class="content-wrapper-col">
+    <form id="survey-form" class="content-wrapper-col">
+      <label for="name" id="name-label">Name</label>
+      <input type="text" id="name" class="fields" placeholder="enter your full name" required>
+      <label for="email" id="email-label">Email</label>
+      <input type="email" id="email" class="fields" placeholder="enter your email address" required>
+      <label for="number" id="number-label">Age</label>
+      <input type="number" id="number" class="fields" min="18" max="80" placeholder="enter your age">
+      <label for="weight">Weight</label>
+      <input type="number" id="weight" class="fields" placeholder="enter your weight">
+      <label for="height">Height</label>
+      <input type="text" id="height" class="fields" placeholder="enter your height in inches"><br>
+
+      <p class="field-description">Please choose your gender</p>
+      <label for="male"><input type="radio" id="male" class="input-radio" name="gender" value="male">Male</label>
+      <label for="female"> <input type="radio" id="female" class="input-radio" name="gender" value="female">Female</label>
+      <label for="other"><input type="radio" id="other" class="input-radio" name="gender" value="other">Other</label><br>
+
+     <label for="dropdown">Please select what is your usual activity level</label>
+      <select id="dropdown" name="activity-level" class="fields" value="select your activity level">
+        <option disabled selected value>Select your activity level</option>
+        <option value="no-activity">I do not workout at all</option>
+        <option value="low">I workout 1-2 times a week</option>
+        <option value="medium">I workout 3-4 times a week</option>
+        <option value="high">I workout more than 4 times a week</option>
+      </select><br>
+      <p class="field-description">Please specify your diet preferences</p>
+
+      <label for="vegetarian"><input type="checkbox" id="vegetarian" class="input-checkbox" name="diet-preferences" value="vegetarian">I am vegetarian</label>
+      <label for="vegan"><input type="checkbox" id="vegan" class="input-checkbox" name="diet-preferences" value="vegan">I am vegan</label>
+      <label for="gluten-free"><input type="checkbox" id="gluten-free" class="input-checkbox" name="diet-preferences" value="gluten-free">I do not tolerate gluten</label>
+       <label for="no-seafood"><input type="checkbox" id="no-seafood" class="input-checkbox" name="diet-preferences" value="no-seafood">I do not eat any seafood</label>
+      <label for="no-dairy"><input type="checkbox" id="no-dairy" class="input-checkbox" name="diet-preferences" value="no-dairy">I do not eat any dairy products</label>
+      <label for="no-nuts"><input type="checkbox" id="no-nuts" class="input-checkbox" name="diet-preferences" value="no-nuts">I do not eat any nuts</label>
+      <label for="no-pref"><input type="checkbox" id="no-pref" class="input-checkbox" name="diet-preferences" value="no-preferences">I do not have any diet preferences</label><br>
+
+      <label for="additional-info">Please tell us if you have any other preferences, allergies, likes or dislikes</label>
+      <textarea id="additional-info" class="comments-field" name="additional-info" rows="7" cols="55">Type your comments here...</textarea>
+
+      <button id="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+</main>
+
+  </body>
+</html>
